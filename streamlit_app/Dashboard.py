@@ -2,6 +2,7 @@
 import streamlit as st
 import json
 import os
+from streamlit_app.performance import show_performance  # ← importujemy wcześniej
 
 CONFIG_PATH = "config/settings.json"
 
@@ -29,6 +30,9 @@ def main():
 
         st.subheader("🚦 Status:")
         st.success("Bot działa w trybie symulacyjnym. Uczenie trwa...")
+
+        # 📊 Wizualizacja skuteczności
+        show_performance()
 
 if __name__ == "__main__":
     main()
