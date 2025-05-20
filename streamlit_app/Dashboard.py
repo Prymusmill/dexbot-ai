@@ -1,11 +1,17 @@
 # streamlit_app/Dashboard.py
+
 import streamlit as st
 import json
 import os
 import time
-from performance import show_performance
+import sys
+
+# 🔧 Naprawa ścieżek importu
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from core.trade_executor import simulate_trade
 from config.settings import load_settings
+from performance import show_performance
 
 CONFIG_PATH = "config/settings.json"
 
