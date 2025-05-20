@@ -3,9 +3,9 @@ import streamlit as st
 import json
 import os
 import time
-from streamlit_app.performance import show_performance
-from streamlit_app.core.trade_executor import simulate_trade
-from streamlit_app.config.settings import load_settings
+from performance import show_performance
+from core.trade_executor import simulate_trade
+from config.settings import load_settings
 
 CONFIG_PATH = "config/settings.json"
 
