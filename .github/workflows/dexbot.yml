@@ -2,8 +2,8 @@ name: Run DEXBot every 10 minutes
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # co 10 minut
-  workflow_dispatch:       # pozwala też uruchomić ręcznie
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -25,3 +25,13 @@ jobs:
       - name: Run worker
         run: |
           python run_worker.py
+
+      - name: Commit updated memory/state/results
+        run: |
+          git config --global user.name "dexbot"
+          git config --global user.email "bot@dex.ai"
+          git add data/*.csv data/state.json || true
+          git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
