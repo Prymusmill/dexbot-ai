@@ -1,6 +1,6 @@
 # dexbot-ai
 
-Projekt bota AI handlującego na DEX (np. Raydium na Solanie) z uczeniem maszynowym i panelem Streamlit.  
+Projekt bota AI handlującego na DEX (np. Raydium na Solanie) z uczeniem maszynowym i panelem Streamlit.
 Bot analizuje trendy rynkowe, podejmuje decyzje kup/sprzedaj/czekaj i uczy się na bieżąco.
 
 ## Główne funkcje:
