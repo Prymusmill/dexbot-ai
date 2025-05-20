@@ -32,8 +32,8 @@ jobs:
         run: |
           git config --global user.name "dexbot"
           git config --global user.email "bot@dex.ai"
-          git pull origin main --rebase
           git add data || true
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
+          git pull --rebase origin main || echo "Brak zmian do pobrania"
           git push origin main
