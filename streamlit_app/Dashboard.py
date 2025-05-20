@@ -2,7 +2,7 @@
 import streamlit as st
 import json
 import os
-from streamlit_app.performance import show_performance  # ← importujemy wcześniej
+from performance import show_performance  # ← importujemy wcześniej
 
 CONFIG_PATH = "config/settings.json"
 
