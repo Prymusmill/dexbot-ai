@@ -17,6 +17,7 @@ def load_state():
         return json.load(f)
 
 def save_state(state):
+    os.makedirs("data", exist_ok=True)  # Upewniamy się, że folder istnieje
     with open(STATE_FILE, "w") as f:
         json.dump(state, f)
 
@@ -32,10 +33,13 @@ def export_results():
 
 if __name__ == "__main__":
     print("🚀 Uruchamiam bota DEX przez GitHub Actions...")
+
+    os.makedirs("data", exist_ok=True)  # ← TU! Bezpiecznie tworzymy folder
+
     settings = load_settings()
     state = load_state()
 
-    for i in range(5):  # 5 symulacji na uruchomienie
+    for i in range(5):  # 5 symulacji na każde uruchomienie
         print(f"🔁 Symulacja {state['count'] + 1}")
         simulate_trade(settings)
         state["count"] += 1
