@@ -1,0 +1,12 @@
+id,result,context
+6cc6ed15-3736-42c4-9cdc-2a19ce6f17b6,success,"{'amount_in': 50000, 'amount_out': '8379', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+554d0180-856f-4a2a-ae46-6e392bfb3eda,success,"{'amount_in': 50000, 'amount_out': '8377', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+1e0045bb-39a0-43f7-94f1-5c49d2228119,success,"{'amount_in': 50000, 'amount_out': '8383', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+c6768451-c5bd-4365-9f93-b45614683c59,success,"{'amount_in': 50000, 'amount_out': '8383', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+4b3426c3-f612-4f2f-8a65-2fdf9cc66595,success,"{'amount_in': 50000, 'amount_out': '8383', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+2852a9b5-6dd9-464b-bdc8-50603e397088,success,"{'amount_in': 50000, 'amount_out': '8376', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+0c5d579a-e9bd-4bd1-bafe-3ecb3fcb885c,success,"{'amount_in': 50000, 'amount_out': '8363', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+05e6ade9-98ba-4d0e-8535-2b29fcd2db10,success,"{'amount_in': 50000, 'amount_out': '8377', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+8369c82e-f3d5-4042-bd94-f53d54921c90,success,"{'amount_in': 50000, 'amount_out': '8383', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+14b7658b-4bfe-4051-826c-c05e24c9347a,success,"{'amount_in': 50000, 'amount_out': '8350', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
+3556c850-ea32-4a8d-aa83-72315dadaa22,success,"{'amount_in': 50000, 'amount_out': '8354', 'input_token': 'So11111111111111111111111111111111111111112', 'output_token': 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'}"
