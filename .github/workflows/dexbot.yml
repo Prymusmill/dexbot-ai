@@ -35,5 +35,4 @@ jobs:
           git add data || true
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
-          git pull --rebase origin main || echo "Brak zmian do pobrania"
           git push origin main
