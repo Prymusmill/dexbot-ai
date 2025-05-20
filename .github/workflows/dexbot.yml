@@ -26,15 +26,16 @@ jobs:
         run: |
           python run_worker.py
 
-      - name: Commit updated memory/state/results
+      - name: Commit and push results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "dexbot"
           git config --global user.email "bot@dex.ai"
           git add data || true
           git status
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
-          # 🛡️ Ustawiamy URL z tokenem, żeby mieć prawo do push
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
