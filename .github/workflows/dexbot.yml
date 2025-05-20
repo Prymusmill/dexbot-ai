@@ -26,16 +26,16 @@ jobs:
         run: |
           python run_worker.py
 
-      - name: Commit and push results
+       - name: Commit and push results
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "dexbot"
           git config --global user.email "bot@dex.ai"
           git add data || true
           git status
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
