@@ -39,7 +39,7 @@ if __name__ == "__main__":
     settings = load_settings()
     state = load_state()
 
-    for i in range(5):  # 5 symulacji na każde uruchomienie
+    for i in range(20):  # 20 symulacji na każde uruchomienie
         print(f"🔁 Symulacja {state['count'] + 1}")
         simulate_trade(settings)
         state["count"] += 1
