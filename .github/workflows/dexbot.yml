@@ -31,7 +31,7 @@ jobs:
       - name: Commit and push results
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-          
+
       - name: Commit and push results
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
