@@ -2,7 +2,7 @@ name: Run DEXBot every 5 minutes
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # ⬅️ Teraz co 5 minut
+    - cron: "*/5 * * * *"  # Co 5 minut
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # ⬅️ To jest kluczowe dla pushowania zmian
+          fetch-depth: 0  # ⬅️ Kluczowe dla rebase
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -34,7 +34,8 @@ jobs:
         run: |
           git config --global user.name "dexbot"
           git config --global user.email "bot@dex.ai"
+          git pull origin main --rebase || echo "Nothing to rebase"
           git add data || true
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
-          git push origin main
+          git push origin main || echo "Push failed"
