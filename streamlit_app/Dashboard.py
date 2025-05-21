@@ -3,15 +3,13 @@
 import streamlit as st
 import json
 import os
-import time
 import sys
+import time
 
-# 🔧 Naprawa ścieżek importu
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from core.trade_executor import simulate_trade
 from config.settings import load_settings
-from core.performance import show_performance  # ✅ Poprawiony import
+from core.performance import show_performance
 
 CONFIG_PATH = "config/settings.json"
 
@@ -24,12 +22,12 @@ def load_settings_local():
         return {}
 
 def main():
-    st.set_page_config(page_title="DEXBot AI", layout="centered")
-    st.title("🤖 DEXBot AI – Dashboard")
+    st.set_page_config(page_title="DEXBot AI – Monitoring", layout="centered")
+    st.title("📡 DEXBot AI – Monitoring")
 
     settings = load_settings_local()
     if settings:
-        st.subheader("🔧 Ustawienia bota")
+        st.subheader("⚙️ Ustawienia bota")
         st.json(settings)
 
         st.subheader("📊 Stan bota")
@@ -38,41 +36,9 @@ def main():
         st.write("Wielkość transakcji (USD):", settings.get("trade_amount_usd", "n/d"))
 
         st.subheader("🚦 Status:")
-        st.success("Bot działa w trybie symulacyjnym. Uczenie trwa...")
+        st.success("Bot działa w trybie ciągłym. Symulacje trwają...")
 
-        # 🧪 PRZYCISKI START/STOP/RESET
-        st.subheader("🧪 Sterowanie symulacją")
-
-        if "running" not in st.session_state:
-            st.session_state.running = False
-
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            if st.button("🟢 START (5 symulacji)"):
-                st.session_state.running = True
-                for i in range(5):
-                    if not st.session_state.running:
-                        break
-                    simulate_trade(settings)
-                    time.sleep(1)
-                st.session_state.running = False
-                st.success("Symulacja zakończona.")
-
-        with col2:
-            if st.button("⛔ STOP"):
-                st.session_state.running = False
-                st.warning("Zatrzymano.")
-
-        with col3:
-            if st.button("🧹 RESET pamięci"):
-                try:
-                    os.remove("data/memory.csv")
-                    st.success("Pamięć wyczyszczona.")
-                except:
-                    st.info("Brak pliku do usunięcia.")
-
-        # 📊 Wizualizacja skuteczności
+        st.subheader("📈 Podgląd danych z pamięci")
         show_performance()
 
 if __name__ == "__main__":
