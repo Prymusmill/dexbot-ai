@@ -1,8 +1,8 @@
-name: Run DEXBot every 10 minutes
+name: Run DEXBot every 5 minutes
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"  # ⬅️ Teraz co 5 minut
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # ⬅️ TO JEST KLUCZOWE!
+          fetch-depth: 0  # ⬅️ To jest kluczowe dla pushowania zmian
 
       - name: Set up Python
         uses: actions/setup-python@v4
