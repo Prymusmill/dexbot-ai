@@ -31,11 +31,15 @@ jobs:
       - name: Commit and push results
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          
+      - name: Commit and push results
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "dexbot"
           git config --global user.email "bot@dex.ai"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
           git pull origin main --rebase || echo "Nothing to rebase"
           git add data || true
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
-          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
           git push origin main || echo "Push failed"
