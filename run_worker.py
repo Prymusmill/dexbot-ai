@@ -49,20 +49,24 @@ def export_results():
     print(f"✅ Wyeksportowano ostatnie 100 wierszy do: {export_path}")
 
 if __name__ == "__main__":
-    print("🚀 Uruchamiam bota DEX przez GitHub Actions...")
+    print("🚀 Uruchamiam bota DEX w trybie ciągłym...")
 
     os.makedirs("data", exist_ok=True)
 
     settings = load_settings()
     state = load_state()
 
-    for i in range(5):
-        print(f"🔁 Symulacja {state['count'] + 1}")
-        simulate_trade(settings)
-        state["count"] += 1
-        time.sleep(1)
+    while True:
+        for i in range(5):  # 🔁 wykonaj paczkę 5 symulacji
+            print(f"🔁 Symulacja {state['count'] + 1}")
+            simulate_trade(settings)
+            state["count"] += 1
+            time.sleep(1)
 
-    save_state(state)
+        save_state(state)
 
-    if state["count"] % 100 == 0:
-        export_results()
+        if state["count"] % 200 == 0:
+            export_results()
+
+        print("⏳ Oczekiwanie 60 sekund przed kolejną paczką...")
+        time.sleep(60)
