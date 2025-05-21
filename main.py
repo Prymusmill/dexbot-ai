@@ -1,4 +1,2 @@
-import streamlit.web.bootstrap
-
-if __name__ == "__main__":
-    streamlit.web.bootstrap.run("streamlit_app/Dashboard.py", "", [], {})
+import os
+os.system("streamlit run streamlit_app/Dashboard.py --server.port=8080")
