@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from core.trade_executor import simulate_trade
 from config.settings import load_settings
-from performance import show_performance
+from core.performance import show_performance  # ✅ Poprawiony import
 
 CONFIG_PATH = "config/settings.json"
 
