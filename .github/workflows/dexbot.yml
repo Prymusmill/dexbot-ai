@@ -36,7 +36,7 @@ jobs:
           git config --global user.email "bot@dex.ai"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
           git fetch origin main
-          git pull origin main --rebase || echo "Nothing to rebase"
+          git reset --hard origin/main
           git add data || true
           git commit -m "Auto update results [bot]" || echo "Brak zmian do commita"
           git push origin main || echo "Push failed"
